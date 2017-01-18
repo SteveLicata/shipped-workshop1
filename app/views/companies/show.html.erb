@@ -1,0 +1,21 @@
+<h1>Company's INFORMATION</h1>
+
+
+
+<%= @company.email %>
+<br>
+	<%=  image_tag @company.image.url%>
+	<hr>
+
+	<%= link_to "add a new boat", new_boat_path %> <br>
+
+	<hr>
+	<% @company_boats.each do |boat| %>
+	  <%= boat.id %><br>
+	  <%= boat.name %><br>
+
+
+		<%=  image_tag boat.image.url%>
+
+	  <br><br>
+	<% end %>

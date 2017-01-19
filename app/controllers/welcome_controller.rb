@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
 
   def home
-    @message = "welome to my app!"
+    @message = "Welome to NYC Shipping Company!"
   end
 
 

@@ -2,28 +2,25 @@
 <%= @message %>
 
 <br>
-<br>
 
-ASSIGNED: <%= @job.boats.inspect %>
-
-
-<h1>JOBS INFO</h1>
+<h1>JOB INFO</h1>
 <hr>
 
-<%= @job.name %><br>
-<%= @job.description%><br>
-<%= @job.origin%><br>
-<%= @job.destination%><br>
-<%= @job.cost%><br>
-<%= @job.containers_needed%><br>
+NAME: <%= @job.name %><br>
+DESCRIPTION: <%= @job.description%><br>
+ORIGIN: <%= @job.origin%><br>
+DESTINATION: <%= @job.destination%><br>
+COST: <%= @job.cost%><br>
+CONTAINERS NEEDED: <%= @job.containers_needed%><br>
 
 
 <hr>
 
 <div class="">
-  All boats assigned to this job:
+  <h1>All Boats Assigned To This Job:</h1>
 </div>
-
-<%=%>
-<%=%>
-<%=%>
+<br>
+<% @job.boats.each do |boat| %>
+NAME: <%= boat.name %>
+<hr>
+<% end %>

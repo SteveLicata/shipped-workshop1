@@ -15,7 +15,10 @@ class JobsController < ApplicationController
       cost: params[:job][:cost],
       containers_needed: params[:job][:containers_needed]
 
+
     )
+
+    @new_job.boats << Boat.find(params[:boats_jobs][:boat_id])
 
     if @new_job
       redirect_to url_for(:controller => :jobs, :action => :index)

@@ -2,23 +2,24 @@
 <h1>List of All JOBS</h1>
 
 
-<%= link_to ("Create NEW JOB"), new_job_path %>
+<h3><%= link_to ("Create NEW JOB"), new_job_path %></h3>
+<hr>
 
 <% @jobs.each do |job| %>
 
 
-<%= job.name %> <br>
-<%= job.description %> <br>
-<%= job.origin %> <br>
-<%= job.destination %> <br>
-<%= job.cost %> <br>
-<%= job.containers_needed %> <br>
+NAME: <%= job.name %> <br>
+DESCRIPTION: <%= job.description %> <br>
+ORIGIN: <%= job.origin %> <br>
+DESTINATION: <%= job.destination %> <br>
+COST: <%= job.cost %> <br>
+CONTAINERS NEEDED: <%= job.containers_needed %> <br>
 
 
 <br><br>
 
-<%= link_to ("JOB show page"),job_path(job.id) %> |
-<%= link_to 'Delete job',  { action: :destroy, id: job.id }, method: :delete %>
+<%= link_to ("Job Details"),job_path(job.id) %> |
+<%= link_to 'Delete Job',  { action: :destroy, id: job.id }, method: :delete %>
 <hr>
 
 <% end %>

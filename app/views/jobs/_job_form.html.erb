@@ -19,7 +19,10 @@
   <%= f.label :containers_needed %>
   <%= f.number_field :containers_needed %> <br>
 
-  <%= f.file_field :image %>
+  <%= f.label :boat %><br>
+  <%= collection_select :boats_jobs, :boat_id, Boat.all, :id, :name %><br>
+
+
 
   <%= f.submit %>
 <% end %>

@@ -1,16 +1,20 @@
 
-<h1>List of All BOATS</h1>
+<h1>List of All Boats</h1>
 
+<div class="link1">
+  <%= link_to ("Create NEW BOAT"), new_boat_path %>
 
-<%= link_to ("Create NEW BOAT"), new_boat_path %>
+</div>
 
+<hr>
 <br><br>
 
+
 <% @boats.each do |boat| %>
-  <%= boat.name %> <br>
-  <%= boat.maxcontainers %> <br>
-  <%= boat.company_id %> <br>
-  <%= boat.location %> <br>
+  NAME: <%= boat.name %> <br>
+  MAXIMUM CONTAINERS: <%= boat.maxcontainers %> <br>
+  COMPANY ID: <%= boat.company_id %> <br>
+  LOCATION: <%= boat.location %> <br>
 
 
   <%= link_to ("Owned By"), company_path(boat.company_id) %>

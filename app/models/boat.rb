@@ -2,6 +2,10 @@ class Boat < ApplicationRecord
   belongs_to :company
   has_and_belongs_to_many :jobs
 
+  validates :name, uniqueness: true
+
+
+
   has_attached_file :image,
   :styles => { :medium => "300x300px>", :thumb => "100x100px>" },
   :default_url => "/assets/default_boat.jpg"

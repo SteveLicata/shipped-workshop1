@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    user_path(resource.id)
+    company_path(resource.id)
 
 
   puts "this is the sauce"

@@ -4,6 +4,8 @@ class BoatsController < ApplicationController
   end
 
   def new
+      @boats = Boat.all
+      @boat = Boat.new
   end
 
   def create
@@ -15,6 +17,8 @@ class BoatsController < ApplicationController
       image: params[:boat][:image]
     )
 
+
+
     if @new_boat
       redirect_to url_for(:controller => :boats, :action => :index)
     else
@@ -24,13 +28,9 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
-    @boat_company = @boat.company.email
+    @company_boats = @boat.company.email
 
-    if session[:boat_id] # if logged in
-      @message = "You're now logged in! This is your profile page."
-    else
-      @message = "You're not logged in yet"
-    end
+
   end
 
   def edit

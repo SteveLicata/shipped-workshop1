@@ -1,0 +1,34 @@
+
+<%= @message %>
+
+<br>
+<br>
+
+
+
+
+
+  <%= @boat.name %><br>
+  <%= @boat.maxcontainers %><br>
+  <%= @boat.company_id %><br>
+  <%= @boat.location %><br>
+
+  <%=  image_tag @boat.image.url%>
+
+  <br><br>
+
+
+
+
+
+  <% @boat.jobs.each do |job| %>
+  <%= job.name %>
+  <%= job.description %>
+  <%= job.origin %>
+  <%= job.destination %>
+  <%= job.cost %>
+  <%= job.conatiner_needed %>
+
+
+
+  <% end %>

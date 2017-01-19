@@ -26,13 +26,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @dog_user = @job.user.email
-
-    if session[:dog_id] # if logged in
-      @msg = "You're now logged in! This is your profile page."
-    else
-      @msg = "You're not logged in yet"
-    end
+    @boats_assigned = @job.boats
   end
 
   def edit

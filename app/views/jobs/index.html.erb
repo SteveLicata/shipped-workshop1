@@ -1,0 +1,27 @@
+
+<h1>List of All JOBS</h1>
+
+
+<%= link_to ("Create NEW JOB"), new_job_path %>
+
+<% @jobs.each do |job| %>
+
+
+<%= job.name %> <br>
+<%= job.description %> <br>
+<%= job.origin %> <br>
+<%= job.destination %> <br>
+<%= job.cost %> <br>
+<%= job.containers_needed %> <br>
+
+
+<br><br>
+
+<%= link_to ("JOB show page"),job_path(job.id) %> |
+<%= link_to 'Delete job',  { action: :destroy, id: job.id }, method: :delete %>
+<hr>
+
+<% end %>
+
+
+<%= @job_assigned %>

@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_company!
 
 
   def show

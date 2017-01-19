@@ -1,0 +1,15 @@
+<%= job.name %><br>
+<%= job.description %><br>
+<%= job.origin %><br>
+<%= job.destination %><br>
+<%= job.cost %><br>
+<%= job.containers_needed %><br>
+
+
+
+Click to see show page:
+<%= link_to (job.name), job_path(job.id) %> <br>
+
+Click to remove job:
+<%= link_to 'Destroy',  { action: :destroy, id: job.id }, method: :delete %> <br><br>
+<hr>

@@ -1,0 +1,24 @@
+
+<h1>List of All BOATS</h1>
+
+
+<%= link_to ("Create NEW BOAT"), new_boat_path %>
+
+<br><br>
+
+<% @boats.each do |boat| %>
+  <%= boat.name %> <br>
+  <%= boat.maxcontainers %> <br>
+  <%= boat.company_id %> <br>
+  <%= boat.location %> <br>
+
+
+  <%= link_to ("Owned By"), company_path(boat.company_id) %>
+
+  <br><br>
+
+  <%= link_to ("Boat show page"), boat_path(boat.id) %> |
+  <%= link_to 'Delete boat',  { action: :destroy, id: boat.id }, method: :delete %>
+  <hr>
+
+<% end %>

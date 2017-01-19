@@ -3,18 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
   body {
-  background-color: black;
+  background-color: #D3D9F2;
   background-position: center;
+  color: black;
+  text-align: center;
 
   .welcome {
 
     background-image: url("maxresdefault.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     // width: 100vh;
+    background-position: center;
 
     h1 {
-    color: black;
+    color: white;
     font-family: sans-serif;
     font-weight: bold;
     text-align: center;

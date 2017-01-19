@@ -22,19 +22,17 @@
               <div class="col-xs-12 col-sm-3 col-md-2">
                 <%= link_to 'View Company', company_path(current_company.id) %>
               </div>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                <a href="/jobs"><p>Jobs</p></a>
+              </div>
+
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                <a href="/boats"><p>Boats</p></a>
+              </div>
             <% else %>
-              <%= link_to 'Company Sign In', new_company_session_path %>
+              <%= link_to 'Company Sign In', new_company_session_path %> |
               <%= link_to 'Company Sign Up', new_company_registration_path%>
             <% end %>
-
-
-          <div class="col-xs-12 col-sm-3 col-md-2">
-            <a href="/jobs"><p>Jobs</p></a>
-          </div>
-
-          <div class="col-xs-12 col-sm-3 col-md-2">
-            <a href="/boats"><p>Boats</p></a>
-          </div>
 
         </nav>
       </div>

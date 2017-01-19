@@ -2,12 +2,11 @@
 <h1>List of All Boats</h1>
 
 <div class="link1">
-  <%= link_to ("Create NEW BOAT"), new_boat_path %>
+  <h3> <%= link_to ("Create New Boat"), new_boat_path %> </h3>
 
 </div>
 
 <hr>
-<br><br>
 
 
 <% @boats.each do |boat| %>
@@ -21,8 +20,8 @@
 
   <br><br>
 
-  <%= link_to ("Boat show page"), boat_path(boat.id) %> |
-  <%= link_to 'Delete boat',  { action: :destroy, id: boat.id }, method: :delete %>
+  <%= link_to ("View This Boat"), boat_path(boat.id) %> |
+  <%= link_to 'Delete Boat',  { action: :destroy, id: boat.id }, method: :delete %>
   <hr>
 
 <% end %>

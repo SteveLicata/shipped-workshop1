@@ -1,3 +1,25 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+  body {
+  background-color: black;
+  background-position: center;
+
+  .welcome {
+
+    background-image: url("maxresdefault.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    // width: 100vh;
+
+    h1 {
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    }
+
+  }
+
+}

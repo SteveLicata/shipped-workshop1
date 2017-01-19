@@ -3,29 +3,51 @@
   <head>
     <title>ShippedWorkshop</title>
     <%= csrf_meta_tags %>
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-    <nav>
-      <% if (company_signed_in?) %>
-        <%= link_to 'Company Sign Out', { :action=>"destroy", :controller =>"devise/sessions" }, method: :delete %>
+    <div class="container">
+      <div class="row">
 
-      <% else %>
-        <%= link_to 'Company Sign In', new_company_session_path %>
-        <%= link_to 'Company Sign Up', new_company_registration_path%>
-      <% end %>
-    </nav>
+          <nav id="nav">
+            <% if (company_signed_in?) %>
+            <div class="col-xs-12 col-sm-3 col-md-2">
+              <%= link_to 'Sign Out', { :action=>"destroy", :controller =>"devise/sessions" }, method: :delete %>
+            </div>
+              <div class="col-xs-12 col-sm-3 col-md-2">
+                <%= link_to 'View Company', company_path(current_company.id) %>
+              </div>
+            <% else %>
+              <%= link_to 'Company Sign In', new_company_session_path %>
+              <%= link_to 'Company Sign Up', new_company_registration_path%>
+            <% end %>
 
 
+          <div class="col-xs-12 col-sm-3 col-md-2">
+            <a href="/jobs"><p>Jobs</p></a>
+          </div>
+
+          <div class="col-xs-12 col-sm-3 col-md-2">
+            <a href="/boats"><p>Boats</p></a>
+          </div>
+
+        </nav>
+      </div>
+    </div>
 
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -17,10 +17,30 @@
 <hr>
 
 <div class="">
-  <h2>All Boats Assigned To This Job:</h2>
+ <h1>Boats Assigned To This Job:</h1>
 </div>
 <br>
+<% @boat_job_ids = []%>
+
+
+
 <% @job.boats.each do |boat| %>
-<strong>NAME:</strong> <%= boat.name %>
+ <% @boat_job_ids << boat.id%>
+NAME: <%= boat.name %>
 <hr>
+<% end %>
+
+<h1>List of Boats thats not assigned</h1>
+
+
+<% @all_boat_ids = []%>
+
+<% @boats.each do |boat|%>
+ <% @all_boat_ids << boat.id%>
+ <% end %>
+
+<% @final_arr = @all_boat_ids-@boat_job_ids%>
+<% @final_arr.each do |t|%>
+  <%= Boat.find(t).name%><br>
+  <%= Boat.find(t).location%><br><br>
 <% end %>

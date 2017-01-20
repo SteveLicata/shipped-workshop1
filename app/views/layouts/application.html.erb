@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ShippedWorkshop</title>
-    <%= csrf_meta_tags %>
+ <head>
+   <title>ShippedWorkshop</title>
+   <%= csrf_meta_tags %>
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+ <body>
 
-  <body>
 
-    <nav>
-      <div class="nav-wrapper blue">
+   <nav class="navbar">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <a class="navbar-brand logo" href="/">ShippIt</a>
+         </div>
 
-        <a class="brand-logo center" href="<%= link_to 'Company', company_path(current_company.id) %>">NYC Shipping</a>
-
-        <ul class="left hide-on-med-and-down">
-
-          <% if (company_signed_in?) %>
-
-            <li><a href="<%= link_to 'Sign Out', { :action => "destroy", :controller => "devise/sessions" }, :class => "sign-out", method: :delete %>">Sign Out</a></li>
-
-            <li><a href="/jobs">Jobs</a></li>
-
-            <li><a href="/boats">Boats</a></li>
-
-            <li><a href="/companies/edit">Edit Info</a></li>
-
-          <% else %>
-
-            <li><a href="<%= link_to 'Company Sign In', new_company_session_path, :class => "sign-in" %>
-            ">Sign In</a></li>
-
-            <li><a href="<%= link_to 'Company Sign Up', new_company_registration_path, :class =>"sign-up"%>
-            ">Sign Up</a></li>
-
-          <% end %>
-
-          <li class="active"><a href="collapsible.html"></a></li>
-        </ul>
+       <div class="links pull-right">
+         <% if  (company_signed_in?)%>
+       <div class="links pull-left">
+               <%= link_to ("Companies"), company_path(current_company.id) %>  |
+               <%= link_to ("Boats"), boats_path %>  |
+               <%= link_to ("Jobs"), jobs_path %>  |
+               <%= link_to "Sign out", { :action => "destroy",  :controller=> "devise/sessions"}, method: :delete %>
       </div>
-    </nav>
-  </div>
+       <% else %>
+             <%= link_to "Sign In", new_company_session_path %>
+             <%= link_to "Sign Up", new_company_registration_path %>
+       <% end %>
+     </div>
+     </div>
+   </nav>
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <%= yield %>
 
-    <!-- Compiled and minified JavaScript -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  </body>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+
+   <%= yield %>
+
+
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </body>
 </html>

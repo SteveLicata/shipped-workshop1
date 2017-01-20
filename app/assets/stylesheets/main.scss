@@ -1,8 +1,20 @@
-// #nav {
-//   font-family: sans-serif;;
-//   font-size: 20px;
-//   background-color: black;
-//   color:white;
-//   text-align: center;
-//   background-color: inherit;
+.navbar {
+  font-family: sans-serif;
+  font-size: 20px;
+  background-color: midnightblue;
+  color:white;
+  text-align: center;
+}
+ .links {
+  //  border: 5px solid black;
+   border-radius: 10px 10px 10px 10px;
+   background-color: midnightblue;
+   color: blue;
+   font-family: sans-serif;
+   font-size: 20px;
+   padding: 10px;
+ }
+
+// .navbar div:hover {
+//   background-color: #D3D9F2;
 // }

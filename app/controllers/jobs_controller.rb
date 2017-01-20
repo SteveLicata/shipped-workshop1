@@ -4,9 +4,11 @@ class JobsController < ApplicationController
   end
 
   def new
+    @boats_arr = Boat.all
   end
 
   def create
+    @boats_arr = Boat.all
     @new_job = Job.create(
       name: params[:job][:name],
       description: params[:job][:description],
@@ -14,22 +16,27 @@ class JobsController < ApplicationController
       destination: params[:job][:destination],
       cost: params[:job][:cost],
       containers_needed: params[:job][:containers_needed]
+      )
 
+      params[:boat][:boat_ids].each do |boat_id|
+        @id = boat_id.to_i
+        @new_job.boats << Boat.find(@id)
+      end
 
-    )
-
-    @new_job.boats << Boat.find(params[:boats_jobs][:boat_id])
 
     if @new_job
       redirect_to url_for(:controller => :jobs, :action => :index)
     else
       redirect_to url_for(:controller => :jobs, :action => :new)
     end
+
+
   end
 
   def show
     @job = Job.find(params[:id])
     @boats_assigned = @job.boats
+    @boats = Boat.all
   end
 
   def edit

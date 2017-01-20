@@ -1,19 +1,18 @@
 
-<h1>List of All JOBS</h1>
+<h2>List of All Jobs</h2>
 
 
-<h3><%= link_to ("Create NEW JOB"), new_job_path %></h3>
+<h3><%= link_to ("Create New Job"), new_job_path %></h3>
 <hr>
 
 <% @jobs.each do |job| %>
 
 
-NAME: <%= job.name %> <br>
-DESCRIPTION: <%= job.description %> <br>
-ORIGIN: <%= job.origin %> <br>
-DESTINATION: <%= job.destination %> <br>
-COST: <%= job.cost %> <br>
-CONTAINERS NEEDED: <%= job.containers_needed %> <br>
+<strong>DESCRIPTION:</strong><%= job.description %> <br>
+<strong>ORIGIN:</strong> <%= job.origin %><br>
+<strong>DESTINATION:</strong><%= job.destination %> <br>
+<strong>COST:</strong><%= job.cost %> <br>
+<strong>CONTAINERS NEEDED:</strong> <%= job.containers_needed %> <br>
 
 
 <br><br>

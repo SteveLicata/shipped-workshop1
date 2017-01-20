@@ -22,7 +22,7 @@
   <%= f.number_field :containers_needed %> <br>
 
   <%= f.label :boat %><br>
-  <%= collection_select :boats_jobs, :boat_id, Boat.all, :id, :name %><br>
+  <%= collection_select :boats_jobs, :boat_id, Boat.all, :id, :name, class: "browser-default" %><br>
 
 
 

@@ -3,24 +3,24 @@
 
 <br>
 
-<h1>JOB INFO</h1>
+<h2>JOB INFO</h2>
 <hr>
 
-<strong>NAME</strong>: <%= @job.name %><br>
-DESCRIPTION: <%= @job.description%><br>
-ORIGIN: <%= @job.origin%><br>
-DESTINATION: <%= @job.destination%><br>
-COST: <%= @job.cost%><br>
-CONTAINERS NEEDED: <%= @job.containers_needed%><br>
+<strong>NAME:</strong> <%= @job.name %><br>
+<strong>DESCRIPTION:</strong> <%= @job.description%><br>
+<strong>ORIGIN:</strong> <%= @job.origin%><br>
+<strong>DESTINATION:</strong> <%= @job.destination%><br>
+<strong>COST:</strong> <%= @job.cost%><br>
+<strong>CONTAINERS NEEDED:</strong> <%= @job.containers_needed%><br>
 
 
 <hr>
 
 <div class="">
-  <h1>All Boats Assigned To This Job:</h1>
+  <h2>All Boats Assigned To This Job:</h2>
 </div>
 <br>
 <% @job.boats.each do |boat| %>
-NAME: <%= boat.name %>
+<strong>NAME:</strong> <%= boat.name %>
 <hr>
 <% end %>

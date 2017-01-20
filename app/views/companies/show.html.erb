@@ -1,15 +1,19 @@
-<h1> Your Company Info:</h1>
+<h2> Your Company Info:</h2>
 
 	<br>
 	<%=  image_tag @company.image.url%>
 	<hr>
 
-<h1> <%= link_to "Add a New Boat", new_boat_path %> </h1>
-	<h3>Boat List:</h3>
+<h3>
+	<%= link_to "Add a New Boat", new_boat_path %> </h3>
+<hr>
+
+<h3>Boat List:</h3>
+
 	<hr>
 	<% @company_boats.each do |boat| %>
-	  Boat ID: <%= boat.id %><br>
-	  Boat Name: <%= boat.name %><br>
+	  <strong>Boat ID:</strong> <%= boat.id %><br>
+	  <strong>Boat Name:</strong> <%= boat.name %><br>
 
 
 		<%=  image_tag boat.image.url(:thumb)%>

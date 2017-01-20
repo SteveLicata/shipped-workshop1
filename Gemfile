@@ -5,6 +5,7 @@ gem 'pry-rails'
 gem 'awesome_print'
 gem 'devise'
 gem 'paperclip'
+gem 'materialize-sass'
 
 
 git_source(:github) do |repo_name|

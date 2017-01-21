@@ -7,7 +7,7 @@ class BoatsController < ApplicationController
       @boats = Boat.all
       @boat = Boat.new
   end
-
+# params to create new boat
   def create
     @new_boat = Boat.create(
       name: params[:boat][:name],
@@ -36,7 +36,7 @@ class BoatsController < ApplicationController
   def edit
     @boat = Boat.find(params[:id])
   end
-
+# params to update boat info
   def update
     @boat = Boat.find(params[:id])
     @boat.update({
@@ -53,7 +53,7 @@ class BoatsController < ApplicationController
       redirect_to url_for(:controller => :boats, :action => :edit)
     end
   end
-
+# delete boat
   def destroy
     Boat.delete(params[:id])
     redirect_to url_for(:controller => :boats, :action => :index)

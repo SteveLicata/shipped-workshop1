@@ -5,7 +5,7 @@
 
 <h2>JOB INFO</h2>
 <hr>
-
+<!-- display job info: -->
 <strong>NAME:</strong> <%= @job.name %><br>
 <strong>DESCRIPTION:</strong> <%= @job.description%><br>
 <strong>ORIGIN:</strong> <%= @job.origin%><br>
@@ -22,23 +22,23 @@
 <br>
 <% @boat_job_ids = []%>
 
-
+<!-- displays boats assigned to job: -->
 
 <% @job.boats.each do |boat| %>
  <% @boat_job_ids << boat.id%>
-NAME: <%= boat.name %>
+<strong>NAME:</strong> <%= boat.name %>
 <hr>
 <% end %>
 
-<h1>List of Boats thats not assigned</h1>
+<h1>List of Boats Not Assigned:</h1>
 
-
+<!-- loops list all boats assigned to job -->
 <% @all_boat_ids = []%>
 
 <% @boats.each do |boat|%>
  <% @all_boat_ids << boat.id%>
  <% end %>
-
+<!-- loop lists all boats not assigned to job -->
 <% @final_arr = @all_boat_ids-@boat_job_ids%>
 <% @final_arr.each do |t|%>
   <%= Boat.find(t).name%><br>

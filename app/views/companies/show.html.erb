@@ -3,17 +3,17 @@
 <h3>
 	<%= link_to "Edit Company Info", edit_company_registration_path %>
 </h3>
-
+<!-- displays company avatar -->
 	<br>
 	<%=  image_tag @company.image.url%>
 	<hr>
-
+<!-- link to add a new boat -->
 <h3>
 	<%= link_to "Add a New Boat", new_boat_path %> </h3>
 <hr>
 
 <h3>Boat List:</h3>
-
+<!-- loop lists boats -->
 	<hr>
 	<% @company_boats.each do |boat| %>
 	  <strong>Boat ID:</strong> <%= boat.id %><br>

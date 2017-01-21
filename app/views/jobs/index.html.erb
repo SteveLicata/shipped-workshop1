@@ -1,12 +1,12 @@
 
 <h2>List of All Jobs</h2>
 
-
+<!-- link to create new job -->
 <h3><%= link_to ("Create New Job"), new_job_path %></h3>
 <hr>
 
 <% @jobs.each do |job| %>
-
+<!-- loop lists all jobs created -->
 
 <strong>DESCRIPTION:</strong><%= job.description %> <br>
 <strong>ORIGIN:</strong> <%= job.origin %><br>
@@ -16,7 +16,7 @@
 
 
 <br><br>
-
+<!-- links to job details and to delete job -->
 <%= link_to ("Job Details"),job_path(job.id) %> |
 <%= link_to 'Delete Job',  { action: :destroy, id: job.id }, method: :delete %>
 <hr>

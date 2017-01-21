@@ -6,11 +6,11 @@
   <%= f.label :description %>
   <%= f.text_field :description %> <br>
 
-
+<!-- dropdown menu for choosing origin location -->
   <%= f.label :origin %>
   <%= f.select :origin, ["Mexico", "Spain", "Dubai", "NYC", "Florida", "Cuba"], prompt: :select %><br><br>
 
-
+  <!-- dropdown menu for choosing destination location -->
   <%= f.label :destination %>
   <%= f.select :destination, ["Japan", "China", "Russia", "India", "Australia", "South Africa"], prompt: :select %><br><br>
 
@@ -21,7 +21,7 @@
   <%= f.label :containers_needed %>
   <%= f.number_field :containers_needed %> <br>
 
-
+<!-- created checkboxes for choosing boats to add to job -->
   <p>Boats:</p>
  <% @boats_arr.each do |boat| %>
    <%= check_box_tag "boat[boat_ids][]", boat.id %>
